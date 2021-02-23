@@ -51,6 +51,11 @@ class Config(object):
     )
     BAN_STICKER = ""  # banhammer marie sticker
     ALLOW_EXCL = True  # Allow ! commands as well as / (Leave this to true so that blacklist can work)
+    MAL_REFRESH_TOKEN = ''
+    MAL_ACCESS_TOKEN = ''
+    MAL_CLIENT_ID = ''
+    MAL_CLIENT_SECRET = ''  
+    INFOPIC = ''
     CASH_API_KEY = "awoo"
     TIME_API_KEY = "awoo"
     WALL_API = (
