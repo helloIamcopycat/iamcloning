@@ -1,8 +1,3 @@
-from YuiiChan.modules.helper_funcs.handlers import (
-    CustomCommandHandler,
-    CustomMessageHandler,
-    CustomRegexHandler,
-)
 import logging
 import os
 import sys
@@ -98,7 +93,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from YuiiChan.config import Config
+    from YuiiChan.config import Development as Config
 
     TOKEN = Config.API_KEY
 
@@ -188,7 +183,11 @@ SUPPORT_USERS = list(SUPPORT_USERS)
 TIGER_USERS = list(TIGER_USERS)
 
 # Load at end to ensure all prev variables have been set
-
+from YuiiChan.modules.helper_funcs.handlers import (
+    CustomCommandHandler,
+    CustomMessageHandler,
+    CustomRegexHandler,
+)
 # make sure the regex handler can take extra kwargs
 tg.RegexHandler = CustomRegexHandler
 tg.CommandHandler = CustomCommandHandler
